@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<ul>
+  <li>
+    <a aria-label="github" href="https://github.com/KiraCoding"
+      ><Icon name="mdi:github" /></a
+    >
+  </li>
+  <li>
+    <a aria-label="twitter" href="https://twitter.com/KiraSocial"
+      ><Icon name="mdi:twitter" /></a
+    >
+  </li>
+  <li>
+    <a aria-label="twitch" href="https://github.com/KiraCoding"
+      ><Icon name="mdi:twitch" /></a
+    >
+  </li>
+  <li>
+    <a aria-label="youtube" href="https://github.com/KiraCoding">
+      <Icon name="mdi:youtube" /></a
+    >
+  </li>
+  <li>
+    <a
+      aria-label="discord"
+      href="https://discordapp.com/channels/@me/303972202821189633"
+    >
+      <Icon name="mdi:discord" />
+    </a>
+  </li>
+</ul>
+
+<style>
+  [data-icon] {
+    font-size: 2em;
+  }
+
+  [data-icon="mdi:language-rust"] {
+    color: #b7410e;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+</style>

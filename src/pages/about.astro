@@ -1,0 +1,97 @@
+---
+import Base from "../layouts/Base.astro";
+import Links from "../components/Links.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+---
+
+
+<Base title="Lina♡ | About">
+  <main>
+    <div class="hero">
+      <Image
+        src="https://github.com/KiraCoding.png"
+        alt=""
+        width="288"
+        height="288"
+        draggable="false"
+        transition:name="image"
+      />
+      <div class="about">
+        <h1>Hi, I'm <span>Lina♡</span></h1>
+        <p>
+          I'm passionate about programming, especially in Rust. My interests lie
+          in accelerated 3D applications, game creation, and the intricacies of
+          game engines. I thrive on exploring the possibilities within these
+          realms, leveraging Rust's power to innovate and create immersive
+          experiences.
+        </p>
+        <Links />
+      </div>
+    </div>
+
+    <hr/>
+
+    <div>
+      <h2>Tech Stack</h2>
+      <div class="icons">
+        <Icon name="mdi:language-rust"/>
+        <Icon name="mdi:language-python"/>
+        <Icon name="mdi:language-typescript"/>
+        <Icon name="mdi:language-javascript"/>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  main {
+    margin: 0 20%;
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .icons {
+    display: flex;
+  }
+
+  hr {
+    width: 100%;
+    margin-top: 2em;
+    opacity: 5%;
+  }
+
+  [data-icon] {
+    font-size: 2em;
+  }
+
+  [data-icon="mdi:language-rust"] {
+    color: #B7410E;
+  }
+
+  [data-icon="mdi:language-typescript"] {
+    color: #358EF1;
+  }
+
+  [data-icon="mdi:language-javascript"] {
+    color: #F0DB4F;
+  }
+
+  .hero {
+    align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  img {
+    width: 18em;
+  }
+
+  span {
+    color: var(--color-accent);
+  }
+</style>

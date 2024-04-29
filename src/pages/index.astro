@@ -1,0 +1,42 @@
+---
+import Base from "../layouts/Base.astro";
+// import Donate from "../components/Donate.astro";
+import { Image } from "astro:assets";
+---
+
+<Base title="Lina♡">
+  <main>
+    <Image
+      src="https://github.com/KiraCoding.png"
+      alt=""
+      width="208"
+      height="208"
+      draggable="false"
+      transition:name="image"
+    />
+    <h1>Hi, I'm <span>Lina♡</span></h1>
+  </main>
+</Base>
+
+<style>
+  main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  img {
+    width: 13em;
+    border-radius: 50%;
+  }
+
+  span {
+    color: var(--color-accent);
+  }
+
+  h1, img {
+    user-select: none;
+  }
+</style>

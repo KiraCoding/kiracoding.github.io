@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import Post from "../../layouts/Post.astro";
+import Index from "../../components/Index.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+
+  return blogEntries.map((entry) => ({
+    params: { post: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+---
+
+<Post title="Lina♡ | Blog | Test">
+  <main>
+    <div class="index">
+      <span>Index</span>
+      <Index headings={headings} />
+    </div>
+    <article>
+      <Content />
+    </article>
+  </main>
+</Post>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .index {
+    position: sticky;
+    top: 0;
+    grid-column: 3;
+    max-height: 100svh;
+  }
+
+  article {
+    grid-row: 1;
+    grid-column: 2;
+  }
+</style>

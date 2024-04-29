@@ -1,0 +1,38 @@
+---
+import { type MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+  depth?: number;
+}
+
+const { headings, depth = 1 } = Astro.props;
+
+const list = headings.filter((heading) => heading.depth === depth);
+---
+
+<ul>
+  {
+    list.map((heading, index) => {
+      const nextHeading = list[index + 1];
+
+      const subHeadings = list.slice(
+        (list as any).indexOf(heading) + 1,
+        nextHeading ? list.indexOf(nextHeading) : undefined
+      );
+
+      return (
+        <li>
+          <a href={`#${heading.slug}`}>{heading.text}</a>
+          {<Astro.self headings={subHeadings} depth={heading.depth + 1} />}
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
