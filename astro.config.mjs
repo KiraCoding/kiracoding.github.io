@@ -3,5 +3,6 @@ import icons from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://kiracoding.github.io",
   integrations: [icons()]
 });
